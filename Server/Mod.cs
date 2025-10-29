@@ -25,7 +25,7 @@ public record ModMetadata : AbstractModMetadata
 
 [Injectable(InjectionType = InjectionType.Singleton, TypePriority = OnLoadOrder.PostDBModLoader + 2)]
 public class MoreBotsExample(
-    MoreBotsServer.MoreBotsLib moreBotsLib
+    MoreBotsServer.MoreBotsAPI moreBotsLib
 ) : IOnLoad
 {
     public async Task OnLoad()
