@@ -1,0 +1,4 @@
+{
+  // Use whatever name you defined in the prepatch scavrole for your bots preceeded by "ScavRole/"
+  "ScavRole/Example": "EXAMPLE"
+}

@@ -43,5 +43,8 @@
     <Reference Include="MoreBotsServer">
       <HintPath>..\Reference\MoreBotsServer\MoreBotsServer.dll</HintPath>
     </Reference>
+    <Reference Include="WTT-ServerCommonLib">
+      <HintPath>..\Reference\WTT-ServerCommonLib\WTT-ServerCommonLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

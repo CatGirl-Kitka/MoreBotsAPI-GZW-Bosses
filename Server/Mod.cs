@@ -4,6 +4,7 @@ using SPTarkov.Server.Core.Models.Spt.Mod;
 using System.Reflection;
 using MoreBotsServer.Services;
 using SPTarkov.Server.Core.Models.Eft.Common;
+using WTTServerCommonLib;
 
 namespace MoreBotsServerExample;
 
@@ -13,7 +14,7 @@ public record ModMetadata : AbstractModMetadata
     public override string Name { get; init; } = "MoreBotsAPIExample";
     public override string Author { get; init; } = "TacticalToaster";
     public override List<string>? Contributors { get; init; } = new() { };
-    public override SemanticVersioning.Version Version { get; init; } = new(1, 0, 0);
+    public override SemanticVersioning.Version Version { get; init; } = new(2, 0, 0);
     public override SemanticVersioning.Range SptVersion { get; init; } = new("~4.0.0");
     public override List<string>? Incompatibilities { get; init; }
     public override Dictionary<string, SemanticVersioning.Range>? ModDependencies { get; init; } = new()
@@ -30,7 +31,8 @@ public record ModMetadata : AbstractModMetadata
 public class MoreBotsExample(
     MoreBotsServer.MoreBotsAPI moreBotsLib,
     FactionService factionService,
-    MoreBotsCustomBotTypeService customBotTypeService
+    MoreBotsCustomBotTypeService customBotTypeService,
+    WTTServerCommonLib.WTTServerCommonLib commonLib
 ) : IOnLoad
 {
     public async Task OnLoad()
@@ -42,7 +44,7 @@ public class MoreBotsExample(
         // WildSpawnType int, WildSpawnType name
         var typeDictionary = new Dictionary<int, string>()
         {
-            { 1111, "bossExampleBot" }
+            { 1069, "bossExampleBot" }
         };
 
         // This list is used in some methods found in the API
@@ -111,6 +113,8 @@ public class MoreBotsExample(
         // You can modify the faction hostility after being killed in a raid
         factionService.SetRevengeAfterRaids("exampleFaction", true, 3);
 
+        await commonLib.CustomLocaleService.CreateCustomLocales(Assembly.GetExecutingAssembly());
+        
         await Task.CompletedTask;
     }
 }
@@ -133,7 +137,7 @@ public class MoreBotsExampleFaction(
             // (WildSpawnType)intValue
             BotTypes =
             {
-                (WildSpawnType)1111
+                (WildSpawnType)1069
             },
             // Will the faction be hostile to players for a number of raids if they kill a member?
             RevengeAfterRaids = true,
