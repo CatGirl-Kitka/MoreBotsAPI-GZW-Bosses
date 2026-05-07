@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <AssemblyName>MoreBotsPrepatchExample</AssemblyName>
     <Description>MoreBotsAPI Prepatch needed to add custom bots to the client.</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>13</LangVersion>
     <Configurations>Debug;Release</Configurations>
     <RootNamespace>MoreBotsAPIExample</RootNamespace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   
   <ItemGroup>
