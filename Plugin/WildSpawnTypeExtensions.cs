@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackDiv
+namespace GrayZone
 {
     public static class WildSpawnTypeExtensions
     {
-        public static List<int> BDTypeEnums = new List<int> { 848420, 848421, 848422, 848423, 848424, 848426 };
+        public static List<int> GZTypeEnums = new List<int> { 7190400 };
 
-        public static bool IsBlackDiv(WildSpawnType type)
+        public static bool IsGrayZone(WildSpawnType type)
         {
-            return BDTypeEnums.Contains((int)type);
+            return GZTypeEnums.Contains((int)type);
         }
     }
 }
